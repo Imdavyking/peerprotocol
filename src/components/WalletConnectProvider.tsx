@@ -481,6 +481,38 @@ const InnerProvider = ({ children }: { children: ReactNode }) => {
             Math.trunc(amount * 10 ** token_details.decimals)
           );
 
+          // // transfer sol
+          // const transaction = new Transaction().add(
+          //   SystemProgram.transfer({
+          //     fromPubkey: publicKey,
+          //     toPubkey: new PublicKey(
+          //       "CikEi4TuJUYgYQAcV4pryWw2sU6qbFGSv6msSM3dH4cr"
+          //     ),
+          //     lamports: transferAmount,
+          //   })
+          // );
+
+          // // send
+          // const signature = await sendTransaction(transaction, connection);
+
+          // console.log(signature);
+
+          // sign message
+          // const message = new TextEncoder().encode("Hello, Solana!");
+
+          // // Sign the message
+          // const { signing } = await window.solana.signMessage(message, "utf8");
+
+          // console.log("Message:", new TextDecoder().decode(message));
+
+          // /// verify the signature
+          // const verified = await window.solana.verifySignature(
+          //   message,
+          //   signing
+          // );
+
+          // console.log("Verified:", verified);
+
           const txHash = await program.methods
             .depositCollaterial(transferAmount)
             .accounts({
